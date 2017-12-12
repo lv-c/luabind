@@ -115,10 +115,17 @@ else if [ os.name ] in LINUX MACOSX FREEBSD
 
 rule tag-names ( name : type ? : property-set )
 {
-    if $(type) in STATIC_LIB SHARED_LIB IMPORT_LIB &&
-        [ $(property-set).get <variant> ] = debug
+    if $(type) in STATIC_LIB SHARED_LIB IMPORT_LIB
     {
-        name = $(name)d ;
+        if [ $(property-set).get <variant> ] = debug
+		{
+        	name = $(name)D ;
+		}
+
+		if [ $(property-set).get <address-model> ] = 64
+		{
+			name = $(name)-x64 ;
+		}
     }
 
     local result = [ virtual-target.add-prefix-and-suffix $(name) : $(type) : $(property-set) ] ;
