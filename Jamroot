@@ -64,7 +64,7 @@ else if [ os.name ] in LINUX MACOSX FREEBSD
         $(LUA_PATH) $(HOME)/Library/Frameworks /Library/Frameworks /usr /usr/local /opt/local /opt ;
 
     local possible-suffixes =
-        include/lua5.1 include/lua51 include/lua include ;
+        src include/lua5.1 include/lua51 include/lua include ;
 
     local includes = [ GLOB $(possible-prefixes)/$(possible-suffixes) : lua.h ] ;
 
