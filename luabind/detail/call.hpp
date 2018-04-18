@@ -219,7 +219,7 @@ invoke_normal
 # endif
 )
 {
-    typedef typename mpl::begin<Signature>::type first;
+    [[maybe_unused]] typedef typename mpl::begin<Signature>::type first;
 # ifndef LUABIND_INVOKE_VOID
     typedef typename mpl::deref<first>::type result_type;
     typedef typename find_conversion_policy<0, Policies>::type result_policy;
