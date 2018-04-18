@@ -82,6 +82,10 @@ lib luabind
     # requirements
     : <include>. <include>$(BOOST_ROOT)
 	  <tag>@tag-names
+	  <toolset>msvc:<cxxflags>-std:c++17
+	  <toolset>gcc:<cxxflags>-std=gnu++17
+	  <warnings-as-errors>off
+
       $(usage-requirements)
     # default-build
     :
