@@ -17,7 +17,7 @@ rule debug-message ( txt * )
 {
     if --debug-build in [ modules.peek : ARGV ]
     {
-        echo [luabind DEBUG] $(txt) ;
+        echo \[luabind DEBUG\] $(txt) ;
     }
 }
 
@@ -82,7 +82,7 @@ lib luabind
     # requirements
     : <include>. <include>$(BOOST_ROOT)
 	  <tag>@tag-names
-	  <toolset>msvc:<cxxflags>-std:c++17
+	  <toolset>msvc:<cxxflags>-std\:c++17
 	  <toolset>gcc:<cxxflags>-std=gnu++17
 	  <warnings-as-errors>off
 
