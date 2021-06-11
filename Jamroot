@@ -34,9 +34,9 @@ rule tag-names ( name : type ? : property-set )
         	name = $(name)D ;
 		}
 
-		if [ $(property-set).get <address-model> ] = 64
+		if [ $(property-set).get <address-model> ] = 32
 		{
-			name = $(name)-x64 ;
+			name = $(name)-x86 ;
 		}
     }
 
